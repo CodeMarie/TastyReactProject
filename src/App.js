@@ -7,26 +7,23 @@ import Titles from "./Titles";
 
 function App() {
   const [home, setHome] = useState("Titles");
- const [movieData, setMovieData] = useState([]);
+  const [movieData, setMovieData] = useState([]);
+  const [watchData, setWatchData] = useState([]);
 
- 
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch("https://hub.dummyapis.com/vj/wzGUkpZ")
-        const data = await response.json()
-        setMovieData(data)
-      } catch {
-      }
+        const response = await fetch("https://hub.dummyapis.com/vj/wzGUkpZ");
+        const data = await response.json();
+        setMovieData(data);
+      } catch {}
     }
-    getData()
+    getData();
   }, []);
-
- 
 
   function getHomePage() {
     if (home === "Titles") {
-      return <Titles movieData={movieData}/>;
+      return <Titles movies={movieData} handleWatch={handleWatch} />;
     } else if (home === "WatchList") {
       return <WatchList />;
     } else {
@@ -34,14 +31,21 @@ function App() {
     }
   }
 
+  function handleWatch(movies) {
+    const addtoWatch = (( ) => {
+      return {...movies, movies}
+    })
+  setWatchData(addtoWatch)
+  }
+
   return (
     <div className="App">
-    <nav>
-      <p>Test Home App Page</p>
-      <button onClick={() => setHome("Titles")}>Titles</button>
-      <button onClick={() => setHome("WatchList")}>Watch List</button>
-      <button onClick={() => setHome("Favourites")}>Favourites</button>
-      {getHomePage()}
+      <nav>
+        <p>Test Home App Page</p>
+        <button onClick={() => setHome("Titles")}>Titles</button>
+        <button onClick={() => setHome("WatchList")}>Watch List</button>
+        <button onClick={() => setHome("Favourites")}>Favourites</button>
+        {getHomePage()}
       </nav>
       <Footer />
     </div>
