@@ -5,10 +5,12 @@ import Favourites from "./Favourites";
 import WatchList from "./WatchList";
 import Titles from "./Titles";
 
+
 function App() {
   const [home, setHome] = useState("Titles");
   const [movieData, setMovieData] = useState([]);
   const [watchData, setWatchData] = useState([]);
+  
 
   useEffect(() => {
     async function getData() {
@@ -25,17 +27,32 @@ function App() {
     if (home === "Titles") {
       return <Titles movies={movieData} handleWatch={handleWatch} />;
     } else if (home === "WatchList") {
-      return <WatchList />;
+      return <WatchList watch={watchData} manageWatched={manageWatched}/>;
     } else {
       return <Favourites />;
     }
   }
 
   function handleWatch(movies) {
-    const addtoWatch = (( ) => {
-      return {...movies, movies}
+    setWatchData((prevMovies) => {
+return [...prevMovies, {
+  id: movies.id, 
+  name: movies.name,
+  banner: movies.bannerUrl,
+  watched: false,
+  favourites: false
+}]
     })
-  setWatchData(addtoWatch)
+  }
+
+  function manageWatched(watched) {
+    const watchedTicked = watchData.map((item) => {
+      if (watched.id === item.id) {
+        item.watched = !watched.watched
+      }
+      return item
+    })
+    setWatchData(watchedTicked)
   }
 
   return (
