@@ -7,6 +7,8 @@ import Titles from "./Titles";
 
 
 function App() {
+
+
   const [home, setHome] = useState("Titles");
   const [movieData, setMovieData] = useState([]);
   const [watchData, setWatchData] = useState([]);
@@ -32,11 +34,26 @@ function App() {
       item.watched === false))
     }
 
+
+          function removeAnItem() {
+            const newList = watchData.filter((item) => {
+              if (item !== item.id) {
+                return false
+              }
+              return true
+          })
+          setWatchData(newList)
+          }
+
+          
+
+   
+
   function getHomePage() {
     if (home === "Titles") {
       return <Titles movies={movieData} handleWatch={handleWatch} />;
     } else if (home === "WatchList") {
-      return <WatchList watch={watchData} manageWatched={manageWatched} deleteAll={deleteAll} deleteWatched={deleteWatched}/>;
+      return <WatchList watch={watchData} manageWatched={manageWatched} deleteAll={deleteAll} deleteWatched={deleteWatched} changeStarRating={changeStarRating} removeAnItem={removeAnItem} />;
     } else {
       return <Favourites />;
     }
@@ -65,6 +82,16 @@ return [...prevMovies, {
     setWatchData(watchedTicked)
   }
 
+
+  function changeStarRating (watched) {
+    const ratings = watchData.map((item) => {
+      if (watched.id === item.id) {
+        item.starRating = watched.starRating
+      }
+      return item
+    })
+    setWatchData(ratings)
+  }
 
   return (
     <div className="App">
