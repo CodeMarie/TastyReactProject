@@ -23,11 +23,20 @@ function App() {
     getData();
   }, []);
 
+  function deleteAll(){
+    setWatchData([]);
+  }
+
+  function deleteWatched(){
+    setWatchData(watchData.filter((item) => 
+      item.watched === false))
+    }
+
   function getHomePage() {
     if (home === "Titles") {
       return <Titles movies={movieData} handleWatch={handleWatch} />;
     } else if (home === "WatchList") {
-      return <WatchList watch={watchData} manageWatched={manageWatched}/>;
+      return <WatchList watch={watchData} manageWatched={manageWatched} deleteAll={deleteAll} deleteWatched={deleteWatched}/>;
     } else {
       return <Favourites />;
     }
@@ -40,7 +49,8 @@ return [...prevMovies, {
   name: movies.name,
   banner: movies.bannerUrl,
   watched: false,
-  favourites: false
+  favourites: false,
+  starRating: 0
 }]
     })
   }
@@ -54,6 +64,7 @@ return [...prevMovies, {
     })
     setWatchData(watchedTicked)
   }
+
 
   return (
     <div className="App">

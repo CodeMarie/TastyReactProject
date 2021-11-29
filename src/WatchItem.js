@@ -1,6 +1,5 @@
 
 function WatchItem(props){
-    console.log("watch item")
 
     function handleCheckbox() {
         props.manageWatched(props.watch)
