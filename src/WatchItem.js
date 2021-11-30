@@ -27,6 +27,10 @@ function WatchItem(props) {
     setHoverValue(undefined);
   };
 
+  function deleteClick (){
+    props.removeAnItem(props.watch.id)
+    console.log("deleteClick")
+  }
 
   return (
     <div>
@@ -61,7 +65,7 @@ function WatchItem(props) {
           />
         );
       })}
-      <div>{<button onClick={props.removeAnItem}>Delete this Content</button>}</div>
+      <div>{<button onClick={deleteClick}>Delete this Content</button>}</div>
     </div>
   );
 }

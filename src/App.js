@@ -8,7 +8,6 @@ import Titles from "./Titles";
 
 function App() {
 
-
   const [home, setHome] = useState("Titles");
   const [movieData, setMovieData] = useState([]);
   const [watchData, setWatchData] = useState([]);
@@ -34,20 +33,14 @@ function App() {
       item.watched === false))
     }
 
+          function removeAnItem (watch){
+      const newList = watchData.filter((item) => {
+        return item.id !== watch.id;
+      })
+      console.log("removeAnItem")
+       setWatchData(newList)
+    }
 
-          function removeAnItem() {
-            const newList = watchData.filter((item) => {
-              if (item !== item.id) {
-                return false
-              }
-              return true
-          })
-          setWatchData(newList)
-          }
-
-          
-
-   
 
   function getHomePage() {
     if (home === "Titles") {
@@ -95,8 +88,7 @@ return [...prevMovies, {
 
   return (
     <div className="App">
-      <nav>
-        <p>Test Home App Page</p>
+      <nav className="navbar">
         <button onClick={() => setHome("Titles")}>Titles</button>
         <button onClick={() => setHome("WatchList")}>Watch List</button>
         <button onClick={() => setHome("Favourites")}>Favourites</button>

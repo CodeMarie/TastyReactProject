@@ -1,9 +1,9 @@
-
+import "./App.css";
 
 function Footer() {
     return (
-      <div className="footer">
-        <p>Tasty TV {new Date().getFullYear()}</p>
+      <div className="Footer">
+        Tasty TV {new Date().getFullYear()}
       </div>
     );
   }
