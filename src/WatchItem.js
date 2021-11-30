@@ -29,7 +29,6 @@ function WatchItem(props) {
 
   function deleteClick (){
     props.removeAnItem(props.watch.id)
-    console.log("deleteClick")
   }
 
   return (
