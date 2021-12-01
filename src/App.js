@@ -1,7 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Footer from "./Footer";
-import Favourites from "./Favourites";
 import WatchList from "./WatchList";
 import Titles from "./Titles";
 
@@ -51,9 +50,7 @@ function App() {
           removeAnItem={removeAnItem}
         />
       );
-    } else {
-      return <Favourites />;
-    }
+    } 
   }
 
   function handleWatch(movies) {
@@ -97,7 +94,6 @@ function App() {
       <div className="Pages">
         <button onClick={() => setHome("Titles")}>Titles</button>
         <button onClick={() => setHome("WatchList")}>Watch List</button>
-        <button onClick={() => setHome("Favourites")}>Favourites</button>
         {getHomePage()}
       </div>
       <Footer />
