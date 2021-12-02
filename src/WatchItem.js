@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { Button, Card } from 'react-bootstrap';
 
 const starColours = {
   orange: "orange",
@@ -32,11 +33,11 @@ function WatchItem(props) {
   }
 
   return (
-    <div>
-      <h2>{props.watch.name}</h2>
-      <div>
-        <img src={props.watch.banner} alt="watch movies banner" />
-      </div>
+    <div className="watch-card">
+    <Card className="text-center" style={{ width: '28rem'}}>
+      <Card.Title>{props.watch.name}</Card.Title>
+      <Card.Img variant="top" img src={props.watch.banner} alt="watch movies banner" />
+      <Card.Body>
       <div className="Watch-Checkbox">
         <input
           type="checkbox"
@@ -64,7 +65,9 @@ function WatchItem(props) {
           />
         );
       })}
-      <div>{<button onClick={deleteClick}>Delete this Content</button>}</div>
+      <div>{<Button variant="light" onClick={deleteClick}>Delete this Content</Button>}</div>
+      </Card.Body>
+      </Card>
     </div>
   );
 }

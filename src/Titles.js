@@ -1,6 +1,7 @@
 import MovieItem from "./MovieItem";
 import cinema from "./img/cinema-review.jpg";
 
+
 function Titles(props) {
 
   return (

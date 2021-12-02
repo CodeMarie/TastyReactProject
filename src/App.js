@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import WatchList from "./WatchList";
 import Titles from "./Titles";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import ttvlogo from "./img/ttv-bg.png";
 
 function App() {
   const [home, setHome] = useState("Titles");
@@ -32,7 +35,6 @@ function App() {
     const newList = watchData.filter((item) => {
       return item.id !== watch;
     });
-    console.log(watch);
     setWatchData(newList);
   }
 
@@ -92,8 +94,9 @@ function App() {
   return (
     <div className="App">
       <div className="Pages">
-        <button onClick={() => setHome("Titles")}>Titles</button>
-        <button onClick={() => setHome("WatchList")}>Watch List</button>
+      <img src={ttvlogo} alt="tasty tv logo"/>
+        <Button variant="outline-success" size="lg" onClick={() => setHome("Titles")}>Titles</Button>{' '}
+        <Button variant="outline-success" size="lg" onClick={() => setHome("WatchList")}>Watch List</Button>
         {getHomePage()}
       </div>
       <Footer />

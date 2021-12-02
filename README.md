@@ -13,4 +13,6 @@ Completion of miro wireframes and State organisation. Link is available [here](h
 4. Functionality, importing images, React Icons - 29.11.2021 
 Worked on image import and React-Icon import of star Array for star rating to fulfil edit an item deliverable. Completed delete all and delete watched functions for WatchItem. 
 5. Testing of CSS - 30.11.2021 Testing of CSS and layout rendering. As five star fulfils edit an item, favourites appears to be a repeat of Watch Page. Assessing components and deliverables needed according to the brief.  
+6. Finishing up Presentation - 01.12.2021 Added react-bootstrap for buttons. 
+7. Addition of gif for title page 02.12.201
 
