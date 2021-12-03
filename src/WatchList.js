@@ -1,11 +1,11 @@
 import WatchItem from "./WatchItem";
-import camera from "./img/camera-ttn.gif";
+import camera from "./img/cinema-board.jpg";
 import { Button } from "react-bootstrap";
 
 function WatchList(props) {
   return (
     <div className="watch-container">
-      <h1>Your WatchList</h1>
+      <h1>Your List of Watch Movies</h1>
       <Button variant="success" onClick={props.deleteAll}>
         Delete All
       </Button>

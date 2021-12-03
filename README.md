@@ -15,10 +15,10 @@ Worked on image import and React-Icon import of star Array for star rating to fu
 5. Testing of CSS - 30.11.2021 Testing of CSS and layout rendering. As five star fulfils the deliverable of the need to edit an item. This replaced the concept of a favourites component which did not add more than Watch Page, prefering Five star for this deliverable. Assessing components and deliverables needed according to the brief.  
 6. Finishing up Presentation - 01.12.2021 Added react-bootstrap for buttons. 
 7. Addition of gif for title page 02.12.2012
-8. Completion of styling 03.12.2021
+8. Completion of styling - 03.12.2021 index.css and react-bootstrap for watch card 
 
 ## Technologies Used 
-Used React and CSS for the project in VS Code, Trello for Project Management and Miro for wireframes
+Used React and CSS for the project in VS Code, Trello for Project Management and Miro for wireframes, react-bootstrap 5.1.3, font-awesome FaStar
 
 # Installation  
 react-bootstrap and import of font awesome Fastar for WatchItem Component

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import Footer from "./Footer";
 import WatchList from "./WatchList";
 import Titles from "./Titles";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button'; 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
 import ttvlogo from "./img/ttv-bg.png";
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
           removeAnItem={removeAnItem}
         />
       );
-    } 
+    }
   }
 
   function handleWatch(movies) {
@@ -94,9 +94,22 @@ function App() {
   return (
     <div className="App">
       <div className="Pages">
-      <img src={ttvlogo} alt="tasty tv logo"/>
-        <Button variant="outline-success" style={{ marginRight: 10}} size="lg" onClick={() => setHome("Titles")}>Titles</Button>
-        <Button variant="outline-success" size="lg" onClick={() => setHome("WatchList")}>Watch List</Button>
+        <img src={ttvlogo} alt="tasty tv logo" />
+        <Button
+          variant="outline-success"
+          style={{ marginRight: 10 }}
+          size="lg"
+          onClick={() => setHome("Titles")}
+        >
+          Your recommended Titles
+        </Button>
+        <Button
+          variant="outline-success"
+          size="lg"
+          onClick={() => setHome("WatchList")}
+        >
+          My Movies Watch List
+        </Button>
         {getHomePage()}
       </div>
       <Footer />

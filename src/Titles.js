@@ -8,7 +8,7 @@ function Titles(props) {
     <div>
       <h1>Tasty TV</h1>
       <img src={cinema} alt="cinema" />
-      <h2>Your Titles - An Array of Recommended Titles for you</h2>
+      <h2>An Array of Recommended Titles for you</h2>
       {props.movies.map((movie, index) => (
         <MovieItem index={index} key={`movie-${index}`} movie={movie} handleWatch={props.handleWatch} />
       ))}
