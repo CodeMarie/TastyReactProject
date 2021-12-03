@@ -4,9 +4,6 @@
     background-color: #0f1827;
     color: #e2e6e7;
 }
-.App {
-  text-align: center;
-}
 
 .Footer {
   background-color: #1b2941;
@@ -18,7 +15,7 @@
   margin-bottom: 15px;
 }
 
-.watch{
+.watch {
   display: flex;
 align-items: center;
 justify-content: center;
@@ -28,3 +25,4 @@ justify-content: center;
   margin-top: 15px;
   margin-bottom: 20px;
 }
+

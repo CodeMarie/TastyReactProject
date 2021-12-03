@@ -95,7 +95,7 @@ function App() {
     <div className="App">
       <div className="Pages">
       <img src={ttvlogo} alt="tasty tv logo"/>
-        <Button variant="outline-success" size="lg" onClick={() => setHome("Titles")}>Titles</Button>{' '}
+        <Button variant="outline-success" style={{ marginRight: 10}} size="lg" onClick={() => setHome("Titles")}>Titles</Button>
         <Button variant="outline-success" size="lg" onClick={() => setHome("WatchList")}>Watch List</Button>
         {getHomePage()}
       </div>

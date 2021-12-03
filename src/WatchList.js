@@ -23,7 +23,7 @@ function WatchList(props) {
         />
       ))}
       <div className="delete-watched-btn">
-        <Button variant="success" onClick={props.deleteWatched}>
+        <Button variant="success" style={{ marginBottom: 15}} onClick={props.deleteWatched}>
           Delete Watched
         </Button>
       </div>
