@@ -1,41 +1,30 @@
-body {
+.Pages {
   margin: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #0f1827;
+    color: #e2e6e7;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
 .App {
   text-align: center;
 }
 
 .Footer {
-  background-color: rgb(57, 55, 55);
+  background-color: #1b2941;
   color: white;
   position: sticky;
 }
-
 
 .camera-img {
   margin-bottom: 15px;
 }
 
-/* .watch-item{
-  display: flex;
-  justify-items: center;
-} */
-
-.watch-card{
+.watch{
   display: flex;
 align-items: center;
 justify-content: center;
+}
+
+.camera-img {
+  margin-top: 15px;
+  margin-bottom: 20px;
 }

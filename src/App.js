@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import WatchList from "./WatchList";
 import Titles from "./Titles";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'; 
 import ttvlogo from "./img/ttv-bg.png";
 
 function App() {

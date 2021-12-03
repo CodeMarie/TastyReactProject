@@ -33,12 +33,12 @@ function WatchItem(props) {
   }
 
   return (
-    <div className="watch-card">
-    <Card className="text-center" style={{ width: '28rem'}}>
+    <div className="watch">
+    <Card className="card-item" bg="dark" text="white" style={{ width: '20rem', marginBottom: 15}}>
       <Card.Title>{props.watch.name}</Card.Title>
-      <Card.Img variant="top" img src={props.watch.banner} alt="watch movies banner" />
+      <Card.Img img src={props.watch.banner} alt="watch movies banner" />
       <Card.Body>
-      <div className="Watch-Checkbox">
+      <div className="watch-checkbox">
         <input
           type="checkbox"
           id="watch"
@@ -65,7 +65,7 @@ function WatchItem(props) {
           />
         );
       })}
-      <div>{<Button variant="light" onClick={deleteClick}>Delete this Content</Button>}</div>
+      <div>{<Button variant="success" onClick={deleteClick}>Delete this Content</Button>}</div>
       </Card.Body>
       </Card>
     </div>

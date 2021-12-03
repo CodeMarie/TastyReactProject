@@ -1,3 +1,5 @@
+import { Button } from 'react-bootstrap';
+
 function MovieItem(props) {
   function addToWatchList() {
     props.handleWatch(props.movie);
@@ -9,7 +11,7 @@ function MovieItem(props) {
       <div>
         <img src={props.movie.bannerUrl} alt="movie banner" />
       </div>
-      <button onClick={addToWatchList}>Add to Watch List</button>
+      <Button variant="success" onClick={addToWatchList}>Add to Watch List</Button>
     </div>
   );
 }
