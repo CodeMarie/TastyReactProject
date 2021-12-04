@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card } from "react-bootstrap";
 
 const starColours = {
   orange: "orange",
@@ -28,45 +28,56 @@ function WatchItem(props) {
     setHoverValue(undefined);
   };
 
-  function deleteClick (){
-    props.removeAnItem(props.watch.id)
+  function deleteClick() {
+    props.removeAnItem(props.watch.id);
   }
 
   return (
     <div className="watch">
-    <Card className="card-item" bg="dark" text="white" style={{ width: '20rem', marginBottom: 15}}>
-      <Card.Title>{props.watch.name}</Card.Title>
-      <Card.Img img src={props.watch.banner} alt="watch movies banner" />
-      <Card.Body>
-      <div className="watch-checkbox">
-        <input
-          type="checkbox"
-          id="watch"
-          name="watch"
-          checked={props.watch.watched}
-          onChange={handleCheckbox}
-        />
-        Tick Watched
-      </div>
-      {starsArray.map((_, index) => {
-        return (
-          <FaStar
-            key={index}
-            size={24}
-            style={{ marginRight: 15, cursor: "pointer" }}
-            onClick={() => handleOnClickStar(index + 1)}
-            onMouseOver={() => handleMouseHover(index + 1)}
-            onMouseLeave={handleMouseLeave}
-            color={
-              (hoverValue || props.watch.starRating) > index
-                ? starColours.orange
-                : starColours.grey
+      <Card
+        className="card-item"
+        bg="dark"
+        text="white"
+        style={{ width: "20rem", marginBottom: 15 }}
+      >
+        <Card.Title>{props.watch.name}</Card.Title>
+        <Card.Img img src={props.watch.banner} alt="watch movies banner" />
+        <Card.Body>
+          <div className="watch-checkbox">
+            <input
+              type="checkbox"
+              id="watch"
+              name="watch"
+              checked={props.watch.watched}
+              onChange={handleCheckbox}
+            />
+            Tick Watched
+          </div>
+          {starsArray.map((_, index) => {
+            return (
+              <FaStar
+                key={index}
+                size={24}
+                style={{ marginRight: 15, cursor: "pointer" }}
+                onClick={() => handleOnClickStar(index + 1)}
+                onMouseOver={() => handleMouseHover(index + 1)}
+                onMouseLeave={handleMouseLeave}
+                color={
+                  (hoverValue || props.watch.starRating) > index
+                    ? starColours.orange
+                    : starColours.grey
+                }
+              />
+            );
+          })}
+          <div>
+            {
+              <Button variant="success" onClick={deleteClick}>
+                Delete this Content
+              </Button>
             }
-          />
-        );
-      })}
-      <div>{<Button variant="success" onClick={deleteClick}>Delete this Content</Button>}</div>
-      </Card.Body>
+          </div>
+        </Card.Body>
       </Card>
     </div>
   );

@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 
 function WatchList(props) {
   return (
-    <div className="watch-container">
+    <div>
       <h1>Your List of Watch Movies</h1>
       <Button variant="success" onClick={props.deleteAll}>
         Delete All
