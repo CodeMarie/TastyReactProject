@@ -72,7 +72,7 @@ function WatchItem(props) {
           })}
           <div>
             {
-              <Button variant="success" onClick={deleteClick}>
+              <Button variant="success" style={{ marginTop: 10 }} onClick={deleteClick}>
                 Delete this Content
               </Button>
             }

@@ -1,14 +1,13 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Footer from "./Footer";
+import Nav from "./Nav";
 import WatchList from "./WatchList";
 import Titles from "./Titles";
+import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
-import ttvlogo from "./img/ttv-bg.png";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [home, setHome] = useState("Titles");
   const [movieData, setMovieData] = useState([]);
   const [watchData, setWatchData] = useState([]);
 
@@ -36,23 +35,6 @@ function App() {
       return item.id !== watch;
     });
     setWatchData(newList);
-  }
-
-  function getHomePage() {
-    if (home === "Titles") {
-      return <Titles movies={movieData} handleWatch={handleWatch} />;
-    } else if (home === "WatchList") {
-      return (
-        <WatchList
-          watch={watchData}
-          manageWatched={manageWatched}
-          deleteAll={deleteAll}
-          deleteWatched={deleteWatched}
-          changeStarRating={changeStarRating}
-          removeAnItem={removeAnItem}
-        />
-      );
-    }
   }
 
   function handleWatch(movies) {
@@ -94,23 +76,30 @@ function App() {
   return (
     <div className="App">
       <div className="Pages">
-        <img src={ttvlogo} alt="tasty tv logo" />
-        <Button
-          variant="outline-success"
-          style={{ marginRight: 10 }}
-          size="lg"
-          onClick={() => setHome("Titles")}
-        >
-          Your recommended Titles
-        </Button>
-        <Button
-          variant="outline-success"
-          size="lg"
-          onClick={() => setHome("WatchList")}
-        >
-          My Movies Watch List
-        </Button>
-        {getHomePage()}
+        <Nav />
+        <Routes>
+          <Route
+            path="/"
+            element={<Titles movies={movieData} handleWatch={handleWatch} />}
+          />
+          <Route
+            path="/recommendedtitles"
+            element={<Titles movies={movieData} handleWatch={handleWatch} />}
+          />
+          <Route
+            path="/watchlist"
+            element={
+              <WatchList
+                watch={watchData}
+                manageWatched={manageWatched}
+                deleteAll={deleteAll}
+                deleteWatched={deleteWatched}
+                changeStarRating={changeStarRating}
+                removeAnItem={removeAnItem}
+              />
+            }
+          />
+        </Routes>
       </div>
       <Footer />
     </div>

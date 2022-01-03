@@ -16,6 +16,7 @@ Worked on image import and React-Icon import of star Array for star rating to fu
 6. Finishing up Presentation - 01.12.2021 Added react-bootstrap for buttons. 
 7. Addition of gif for title page 02.12.2012
 8. Completion of styling - 03.12.2021 index.css and react-bootstrap for watch card and final checks and deployment.
+9. Addition of React Router for Nav to replace conditional rendering.
 # Installation  
 react-bootstrap and import of font awesome Fastar for WatchItem Component 
 

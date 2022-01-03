@@ -21,6 +21,10 @@ align-items: center;
 justify-content: center;
 }
 
+.watch-checkbox {
+  margin-bottom: 10px;
+}
+
 .camera-img {
   margin-top: 15px;
   margin-bottom: 20px;
